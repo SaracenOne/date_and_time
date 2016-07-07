@@ -1,5 +1,31 @@
 const SECONDS_PER_DAY = 86400
 
+const MERIDIEM_ANTE = "am"
+const MERIDIEM_POST = "pm"
+
+class DateAndTime extends Reference:
+	var seconds = 0
+	var minutes = 0
+	var hours = 0
+	var days = 0
+	var months = OS.MONTH_JANUARY
+	var years = 0
+	func serialize_save_binary(p_stream):
+		p_stream.store_8(seconds)
+		p_stream.store_8(minutes)
+		p_stream.store_8(hours)
+		p_stream.store_16(days)
+		p_stream.store_8(months)
+		p_stream.store_32(years)
+	
+	func serialize_load_binary(p_stream):
+		seconds = p_stream.get_8()
+		minutes = p_stream.get_8()
+		hours = p_stream.get_8()
+		days = p_stream.get_16()
+		months = p_stream.get_8()
+		years = p_stream.get_32()
+
 static func get_month_from_string(p_string):
 	var lower_string = p_string.to_lower()
 	
