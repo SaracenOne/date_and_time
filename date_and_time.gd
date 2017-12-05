@@ -53,6 +53,8 @@ static func get_month_from_string(p_string):
 		return OS.MONTH_NOVEMBER
 	elif(lower_string == "december"):
 		return OS.MONTH_DECEMBER
+	else:
+		return -1
 		
 static func get_string_from_month(p_month):
 	if(p_month == OS.MONTH_JANUARY):
@@ -79,6 +81,8 @@ static func get_string_from_month(p_month):
 		return "November"
 	elif(p_month == OS.MONTH_DECEMBER):
 		return "December"
+	else:
+		return ""
 		
 static func get_string_from_month_tr(p_month):
 	if(p_month == OS.MONTH_JANUARY):
@@ -105,6 +109,8 @@ static func get_string_from_month_tr(p_month):
 		return "MONTH_NOVEMBER"
 	elif(p_month == OS.MONTH_DECEMBER):
 		return "MONTH_DECEMBER"
+	else:
+		return ""
 		
 static func get_string_from_weekday(p_day):
 	if(p_day == OS.DAY_SUNDAY):
@@ -121,6 +127,8 @@ static func get_string_from_weekday(p_day):
 		return "Friday"
 	elif(p_day == OS.DAY_SATURDAY):
 		return "Saturday"
+	else:
+		return ""
 		
 static func get_string_from_weekday_tr(p_day):
 	if(p_day == OS.DAY_SUNDAY):
@@ -137,6 +145,8 @@ static func get_string_from_weekday_tr(p_day):
 		return "DAY_FRIDAY"
 	elif(p_day == OS.DAY_SATURDAY):
 		return "DAY_SATURDAY"
+	else:
+		return ""
 
 static func get_is_leap_year(p_year):
 	var is_leap_year
